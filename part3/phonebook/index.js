@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const corse = require("cors");
 
 app.use(cors());
 app.use(morgan("tiny"));
