@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 app.use(morgan("tiny"));
 app.use(express.json());
