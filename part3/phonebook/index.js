@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const corse = require("cors");
+const cors = require("cors");
 
-app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
+app.use(cors());
+dotenv.config();
 
 const persons = [
   {
@@ -92,7 +93,7 @@ app.get("/info", (req, res) => {
   res.end(text);
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
