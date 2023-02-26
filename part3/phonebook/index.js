@@ -8,6 +8,7 @@ app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cors());
 dotenv.config();
+app.use(express.static("build"));
 
 const persons = [
   {
