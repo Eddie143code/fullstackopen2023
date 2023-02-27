@@ -34,8 +34,6 @@ const App = () => {
     e.preventDefault();
     const newContact = { name: newName, number: newNumber };
 
-    console.log(e.target.value);
-
     const testName = persons.find((person) => {
       if (person.name === newName) {
         return person.name;
@@ -95,12 +93,18 @@ const App = () => {
           setTimeout(() => {
             setSuccessMessage("");
           }, 5000);
+        })
+        .catch((error) => {
+          setErrorMessage(error.response.data.error.message);
+          console.log(error.response.data.error.message);
+          setTimeout(() => {
+            setErrorMessage("");
+          }, 5000);
         });
     }
   };
 
   const deleteContacts = (id, name) => {
-    console.log(id);
     if (window.confirm(`Delete ${name}?`)) {
       contactService.deleteContact(id).then((response) => {
         const filtered = persons.filter((person) => person.id != id);
