@@ -23,7 +23,7 @@ const SingleCountry = ({ country }) => {
       </ul>
       <img src={country.flags.png} alt="flag" width="160px" />
       <h3>Weather in {country.capital}</h3>
-      <p>temperature {weather.temperatre} Celcius</p>
+      <p>temperature {Math.floor(weather.temp)} Celcius</p>
       <img
         src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
         alt="icon"
