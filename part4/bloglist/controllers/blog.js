@@ -47,8 +47,6 @@ blogRouter.delete("/:id", async (req, res) => {
   const token = req.token;
   const user = req.user;
 
-  console.log("type of id: ", typeof id);
-  console.log("id: ", id);
   // console.log("token ", token);
   // console.log("user ", user);
 
@@ -70,7 +68,6 @@ blogRouter.delete("/:id", async (req, res) => {
 
 blogRouter.put("/:id", async (req, res) => {
   const id = req.params.id;
-
   const blogItem = {
     title: req.body.title,
     author: req.body.author,

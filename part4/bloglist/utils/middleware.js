@@ -7,7 +7,7 @@ const getTokenFrom = (req, res, next) => {
   // console.log("in gettokenfrom");
   const authorization = req.get("authorization");
   if (authorization && authorization.toLowerCase().startsWith("bearer ")) {
-    //  console.log("in if stataement");
+    //  console.log("in if statement");
 
     req.token = authorization.substring(7);
   }
@@ -17,7 +17,7 @@ const getTokenFrom = (req, res, next) => {
 const userExtractor = async (req, res, next) => {
   // console.log("in userEx");
   const token = req.token;
-  console.log(token);
+  // console.log(token);
 
   if (token) {
     const decodeToken = jwt.verify(token, SECRET);

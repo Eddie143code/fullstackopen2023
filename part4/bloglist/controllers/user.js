@@ -34,9 +34,8 @@ userRouter.post("/signup", async (req, res) => {
 
 userRouter.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  console.log(typeof username, typeof password);
   const user = await User.findOne({ username });
-  console.log(user);
+
   const passwordCorrect =
     user === null ? false : await bcrypt.compare(password, user.passwordHash);
 
