@@ -149,6 +149,8 @@ const resolvers = {
           b.genres.find((genre) => genre === args.genre)
         );
       }
+
+      return books;
     },
     allAuthors: () => {
       return authors.map((author) => ({
