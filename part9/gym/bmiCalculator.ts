@@ -13,4 +13,7 @@ const calcBmi = (height: number, weight: number): string => {
   }
 };
 
-console.log(calcBmi(180, 74));
+//const height = Number(process.argv[3]);
+//const weight = Number(process.argv[4]);
+
+export default calcBmi;
